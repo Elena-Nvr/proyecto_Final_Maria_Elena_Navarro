@@ -6,7 +6,6 @@ Proyecto final del bootcamp - Tecsup
 | | |
 | :--- | :--- |
 | 👤 **Autora** | María Elena Navarro Amaya (QA) |
-| 🌐 **Aplicación** | https://demo.nopcommerce.com/ |
-| 📄 **Documento de alcance** | [QA-ALC-001_Alcance-de-calidad_nopCommerce_v1.0.docx](docs/QA-ALC-001_Alcance-de-calidad_nopCommerce_v1.0.docx) |
+| 📄 **Documento de alcance** | 📄 [ Aqui se encuentra el documento de alcance](docs/QA-ALC-001_Alcance-de-calidad_nopCommerce_v1.0.docx) |
 
 
