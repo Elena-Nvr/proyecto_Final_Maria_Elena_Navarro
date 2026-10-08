@@ -6,6 +6,7 @@ Proyecto final del bootcamp - Tecsup
 | | |
 | :--- | :--- |
 | 👤 **Autora** | María Elena Navarro Amaya (QA) |
+| 📁 **Proyecto** | virtual (E-commerce) |
 | 📄 **Documento de alcance** | 📄 [ Aqui el documento de alcance](docs/QA-NAE-001_Alcance-de-calidad_Miproyecto_v1.0.docx) |
 
 **🎯 Objetivo de calidad**
