@@ -1,6 +1,7 @@
 # Mapa de flujos críticos 
 
 **Proyecto:** Tienda Virtual
+
 **Autora:** María Elena Navarro Amaya (QA)
 
 Este documento es la primera parte del documento de casos de prueba. Todas las peticiones fueron registradas por mí de nopcommerce del navegador (pestaña Network).
