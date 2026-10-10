@@ -84,3 +84,5 @@ caso1 = NUEVO CasoDePrueba
 ```
 
 Los atributos de la clase serán los campos (columnas) de mi documento de casos de prueba.
+
+📄 [ Aqui el documento de alcance](docs/QA-NAME-001_Alcance-de-calidad_Miproyecto_v1.0.docx)
