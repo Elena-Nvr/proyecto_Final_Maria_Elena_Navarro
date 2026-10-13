@@ -84,3 +84,5 @@ caso1 = NUEVO CasoDePrueba
 ```
 
 Los atributos de la clase serán los campos (columnas) de mi documento de casos de prueba.
+
+📄 [ Ver Aqui](FLUJOS_CRITICOS_MARIA_NAVARRO.pdf)
