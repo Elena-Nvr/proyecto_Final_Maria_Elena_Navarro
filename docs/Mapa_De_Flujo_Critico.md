@@ -85,4 +85,6 @@ caso1 = NUEVO CasoDePrueba
 
 Los atributos de la clase serán los campos (columnas) de mi documento de casos de prueba.
 
-📄 [ Ver Aqui](/MAPA DE FLUJOS CRITICO.DOCUMENTACION.pdf)
+📄 [ Ver Aqui](docs/MAPA DE FLUJOS CRITICO.DOCUMENTACION.pdf)
+
+
