@@ -6,7 +6,7 @@ Proyecto final del bootcamp - Tecsup
 | | |
 | :--- | :--- |
 | 👤 **Autora** | María Elena Navarro Amaya (QA) |
-| 📁 **Proyecto** | virtual (E-commerce) |
+| 📁 **Proyecto** | Tienda virtual (E-commerce) |
 
 **📚 Temas**
 - **Casos de prueba:** Diseñarlos con ID, precondiciones, pasos, resultado esperado y resultado obtenido.
