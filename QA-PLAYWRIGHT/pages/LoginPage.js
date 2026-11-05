@@ -10,7 +10,7 @@ export class LoginPage {
   }
   //metodo para navegar a la página de login
   async goto() {
-    await this.page.goto('/login');
+        await this.page.goto('/login', { waitUntil: 'domcontentloaded' });
   }
 
   //metodo para iniciar sesion
