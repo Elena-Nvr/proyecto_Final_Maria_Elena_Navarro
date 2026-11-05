@@ -4,7 +4,7 @@ export class HomePage {
   }
   //metodo para navegar a la página de inicio
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto('/', { waitUntil: 'domcontentloaded' });
   }
 //metodo para abrir la página de un producto 
   async openProduct(name) {
