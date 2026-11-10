@@ -5,6 +5,14 @@ import { ProductPage } from '../pages/ProductPage.js';
 import { CartPage } from '../pages/CartPage.js';
 
 
+// Si falta una variable de entorno(nunca muestra su valor)
+function requireEnv(name) {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Falta la variable ${name}. Copia .env.example a .env y complétala.`);
+  }
+  return value;
+}
 
 export const test = base.extend({
   //bloquea los anuncios de terceros que tapan la página y hacen fallar los clics
@@ -22,11 +30,11 @@ export const test = base.extend({
     await use(loginPage);
   },
 
-  //metodo para obtener las credenciales de login desde variables de entorno
+  //obtiene las credenciales de login desde variables de entorno
   credentials: async ({}, use) => {
     await use({
-      email: process.env.LOGIN_EMAIL,
-      password: process.env.LOGIN_PASSWORD,
+      email: requireEnv('LOGIN_EMAIL'),
+      password: requireEnv('LOGIN_PASSWORD'),
     });
   },
   loggedInPage: async ({ page, loginPage, credentials }, use) => {

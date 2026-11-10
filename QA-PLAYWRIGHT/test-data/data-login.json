@@ -1,0 +1,21 @@
+[
+  {
+    "id": "CP-AUTH-02",
+    "name": "correo inexistente muestra error",
+    "email": "noexiste@correo.com",
+    "password": "contraseña-equivocada",
+    "error": "Your email or password is incorrect!"
+  },
+  {
+    "id": "CP-AUTH-03",
+    "name": "contraseña incorrecta muestra error",
+    "password": "contraseña-equivocada",
+    "error": "Your email or password is incorrect!"
+  },
+  {
+    "id": "CP-AUTH-04",
+    "name": "contraseña solo con espacios muestra error",
+    "password": "   ",
+    "error": "Your email or password is incorrect!"
+  }
+]
