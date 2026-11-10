@@ -1,4 +1,6 @@
 import { test, expect } from '../fixtures.js';
+import dataLogin from '../../test-data/data-login.json';
+
 
 test.describe('Autenticación', () => {
   // ---------- Login exitoso ----------
@@ -10,25 +12,19 @@ test.describe('Autenticación', () => {
     await expect(loginPage.logoutLink).toBeVisible();
   });
 
-  // ---------- Login con errores ----------
-  test('CP-AUTH-02:correo inexistente', async ({ page, loginPage, credentials }) => {
-    await loginPage.login('noexiste@correo.com', credentials.password);
+   // ---------- Login con errores: un test por cada fila en JSON ----------
+  for (const { id, name, email, password, error } of dataLogin) {
+    test(`${id}: ${name}`, async ({ page, loginPage, credentials }) => {
+      await loginPage.login(email ?? credentials.email, password);
 
-    await expect(loginPage.errorMessage).toBeVisible();
-    await expect(page).toHaveURL(/login/);
-  });
-
-  test('CP-AUTH-03: contraseña incorrecta', async ({ page, loginPage, credentials }) => {
-    await loginPage.login(credentials.email, 'contraseña-equivocada');
-
-    await expect(loginPage.errorMessage).toBeVisible();
-    await expect(page).toHaveURL(/login/);
-  });
+      await expect(loginPage.errorMessage).toHaveText(error);
+      await expect(page).toHaveURL(/login/);
+    });
+  }
 
   // ---------- Cerrar sesión ----------
-  test('CP-AUTH-04:cerrar sesión', async ({ page, loggedInPage, loginPage }) => {
+  test('CP-AUTH-05:cerrar sesión', async ({ page, loggedInPage, loginPage }) => {
     await loginPage.logoutLink.click();
-
     await expect(page).toHaveURL(/login/);
     await expect(loginPage.loginButton).toBeVisible();
   });
