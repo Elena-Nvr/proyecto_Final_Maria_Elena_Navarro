@@ -7,5 +7,10 @@
     "cvc": "123",
     "expiryMonth": "12",
     "expiryYear": "2030"
-  }
+  },
+  
+  "orders": [
+    { "label": "Blue Top", "product": "Blue Top", "comment": "Pedido de prueba automatizado" },
+    { "label": "Men Tshirt", "product": "Men Tshirt", "comment": "Pedido con otro producto" }
+  ]
 }

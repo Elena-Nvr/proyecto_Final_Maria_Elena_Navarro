@@ -27,6 +27,10 @@ export const test = base.extend({
     await use(page);
   },
 
+   //producto del pedido: por defecto el del JSON, y cada test puede cambiarlo con test.use
+  orderProduct: [checkoutData.product, { option: true }],
+
+
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
@@ -65,12 +69,12 @@ export const test = base.extend({
 
   //el camino hasta Address Details: login, producto, carrito y checkout
   checkoutAtAddress: async (
-    { loggedInPage, homePage, productPage, cartPage, checkoutPage },
+    { loggedInPage, homePage, productPage, cartPage, checkoutPage, orderProduct },
     use
   ) => {
     await cartPage.empty();
     await homePage.goto();
-    await homePage.openProduct(checkoutData.product);
+    await homePage.openProduct(orderProduct);   
     await productPage.addToCart();
     await productPage.openCart();
     await cartPage.startCheckout();
@@ -80,12 +84,12 @@ export const test = base.extend({
 
   //mismo camino, pero sin login: exige que el contexto ya traiga la sesión guardada
   checkoutAtAddressWithSession: async (
-    { homePage, productPage, cartPage, checkoutPage },
+    { homePage, productPage, cartPage, checkoutPage, orderProduct },
     use
   ) => {
     await cartPage.empty();
     await homePage.goto();
-    await homePage.openProduct(checkoutData.product);
+    await homePage.openProduct(orderProduct);  
     await productPage.addToCart();
     await productPage.openCart();
     await cartPage.startCheckout();
