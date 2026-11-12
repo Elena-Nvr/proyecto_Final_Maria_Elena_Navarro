@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures.js';
 import checkoutData from '../../test-data/checkout-data.json';
 
 // la cuenta de prueba y su carrito son compartidos: estos tests no pueden correr en paralelo
-test.describe.configure({ mode: 'serial' });
+test.describe.configure({ mode: 'serial', retries: 0 });  
 
 test.describe('Checkout', () => {
  // CP-01 es data-driven: el mismo flujo corre una vez por cada pedido del JSON
