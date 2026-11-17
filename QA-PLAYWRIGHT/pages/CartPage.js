@@ -5,7 +5,7 @@ export class CartPage {
     this.page = page;
     this.checkoutButton = page.locator('.check_out'); //metodo para obtener el boton de checkout
     this.deleteButtons = page.locator('.cart_quantity_delete'); //las x que eliminan cada fila del carrito
-
+    this.emptyMessage = page.getByText('Cart is empty!'); //aviso que aparece cuando no quedan productos
   }
   
   rowFor(name) {

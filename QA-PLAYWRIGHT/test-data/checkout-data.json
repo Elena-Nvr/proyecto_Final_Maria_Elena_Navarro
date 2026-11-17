@@ -1,6 +1,7 @@
 {
   "product": "Blue Top",
   "comment": "Pedido de prueba automatizado",
+  "products": ["Blue Top", "Men Tshirt"],
   "card": {
     "name": "Cuenta de Prueba",
     "number": "4111111111111111",
@@ -8,6 +9,7 @@
     "expiryMonth": "12",
     "expiryYear": "2030"
   },
+  
   
   "orders": [
     { "label": "Blue Top", "product": "Blue Top", "comment": "Pedido de prueba automatizado" },

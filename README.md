@@ -25,24 +25,29 @@ Proyecto final del bootcamp - Tecsup
 ├── 📂 QA-PLAYWRIGHT/
 │   │
 │   ├── 📂 pages/
-│   │   ├── 📄 CartPage.js
 │   │   ├── 📄 HomePage.js
 │   │   ├── 📄 LoginPage.js
-│   │   └── 📄 ProductPage.js
+│   │   ├── 📄 ProductPage.js
+│   │   ├── 📄 CartPage.js
+│   │   ├── 📄 CheckoutPage.js
+│   │   └── 📄 PaymentPage.js
 │   │
 │   ├── 📂 tests/
 │   │   ├── 📂 auth/
 │   │   │   └── 🧪 login.spec.js
-│   │   │
 │   │   ├── 📂 shop/
-│   │   │   └── 🧪 cart.spec.js
-│   │   │
+│   │   │   ├── 🧪 cart.spec.js
+│   │   │   ├── 🧪 checkout.spec.js
+│   │   │   ├── 🧪 waits.spec.js
+│   │   │   ├── 🧪 report-demo.spec.js
+│   │   │   └── 🧪 flaky-demo.spec.js
 │   │   └── 🧩 fixtures.js
 │   │
-│   ├── 📂 playwright-report/
-│   ├── 📂 prueba/
-│   ├── 📂 test-results/
+│   ├── 📂 test-data/
+│   │   ├── 📄 data-login.json
+│   │   └── 📄 checkout-data.json
 │   │
+│   ├── ⚙️ playwright.config.js
 │   ├── 🔒 .env.example
 │   ├── 🚫 .gitignore
 │   ├── 📦 package.json
@@ -50,7 +55,6 @@ Proyecto final del bootcamp - Tecsup
 │
 └── 📘 README.md
 ```
-
 
 ## 📌 Resumen
  

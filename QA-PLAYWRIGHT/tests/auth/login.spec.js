@@ -4,9 +4,8 @@ import dataLogin from '../../test-data/data-login.json';
 
 test.describe('Autenticación', () => {
   // ---------- Login exitoso ----------
-  test('CP-AUTH-01:login exitoso', async ({ page, loginPage, credentials }) => {
+  test('CP-AUTH-01: login exitoso', async ({ page, loginPage, credentials }) => {
     await loginPage.login(credentials.email, credentials.password);
-
     await expect(page).toHaveURL('/');
     await expect(loginPage.loggedInText).toBeVisible();
     await expect(loginPage.logoutLink).toBeVisible();
@@ -16,7 +15,6 @@ test.describe('Autenticación', () => {
   for (const { id, name, email, password, error } of dataLogin) {
     test(`${id}: ${name}`, async ({ page, loginPage, credentials }) => {
       await loginPage.login(email ?? credentials.email, password);
-
       await expect(loginPage.errorMessage).toHaveText(error);
       await expect(page).toHaveURL(/login/);
     });

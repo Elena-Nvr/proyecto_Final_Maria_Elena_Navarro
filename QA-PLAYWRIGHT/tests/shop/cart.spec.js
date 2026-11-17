@@ -20,4 +20,24 @@ test.describe('Tienda', () => {
       await expect(cartPage.quantityOf(name)).toHaveText('1');
     });
   }
+  
+
+    test('CP-TIENDA-03: eliminar un producto del carrito', async ({
+    page,
+    homePage,
+    productPage,
+    cartPage,
+  }) => {
+    await homePage.openProduct('Blue Top');
+    await productPage.addToCart();
+    await productPage.openCart();
+    await page.waitForLoadState('load');
+    await expect(cartPage.rowFor('Blue Top')).toBeVisible();
+
+    await cartPage.deleteButtons.first().click();
+
+    await expect(cartPage.rowFor('Blue Top')).toHaveCount(0);
+    await expect(page.getByText('Cart is empty!')).toBeVisible();
+  });
+
 });

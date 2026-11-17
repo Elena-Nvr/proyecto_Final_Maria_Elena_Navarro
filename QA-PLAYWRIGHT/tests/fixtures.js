@@ -76,6 +76,25 @@ export const test = base.extend({
     await homePage.goto();
     await homePage.openProduct(orderProduct);   
     await productPage.addToCart();
+    await expect(productPage.confirmation).toBeVisible(); 
+    await productPage.openCart();
+    await cartPage.startCheckout();
+    await checkoutPage.waitForSavedAddress();
+    await use(checkoutPage);
+  },
+
+    //mismo camino hasta Address Details, pero con varios productos en el carrito
+  checkoutAtAddressWithProducts: async (
+    { loggedInPage, homePage, productPage, cartPage, checkoutPage },
+    use
+  ) => {
+    await cartPage.empty();
+    for (const name of checkoutData.products) {
+      await homePage.goto();
+      await homePage.openProduct(name);
+      await productPage.addToCart();
+      await expect(productPage.confirmation).toBeVisible(); 
+    }
     await productPage.openCart();
     await cartPage.startCheckout();
     await checkoutPage.waitForSavedAddress();
@@ -91,6 +110,7 @@ export const test = base.extend({
     await homePage.goto();
     await homePage.openProduct(orderProduct);  
     await productPage.addToCart();
+    await expect(productPage.confirmation).toBeVisible();
     await productPage.openCart();
     await cartPage.startCheckout();
     await checkoutPage.waitForSavedAddress();

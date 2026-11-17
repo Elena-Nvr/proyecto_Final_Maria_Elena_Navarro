@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures.js';
 import checkoutData from '../../test-data/checkout-data.json';
 
 // la cuenta de prueba y su carrito son compartidos: estos tests no pueden correr en paralelo
-test.describe.configure({ mode: 'serial', retries: 0 });  
+test.describe.configure({ mode: 'serial', retries: 0, timeout: 90000 });
 
 test.describe('Checkout', () => {
  // CP-01 es data-driven: el mismo flujo corre una vez por cada pedido del JSON
@@ -38,7 +38,20 @@ for (const order of checkoutData.orders) {
     await expect(page).toHaveURL(/\/payment\/?$/);
     await expect(paymentPage.orderConfirmation).toBeHidden();
   });
+
+  test('CP-CHECKOUT-05: completar el pedido con varios productos', async ({
+    checkoutAtAddressWithProducts: checkoutPage,
+    paymentPage,
+  }) => {
+    for (const name of checkoutData.products) {
+      await expect(checkoutPage.orderReview).toContainText(name);
+    }
+    await checkoutPage.placeOrder(checkoutData.comment);
+    await paymentPage.payWithCard(checkoutData.card);
+    await expect(paymentPage.orderConfirmation).toBeVisible();
+  });
 });
+
 
 // CP-04: la sesión guardada se entrega a un contexto nuevo
 const testWithSession = test.extend({
