@@ -1,0 +1,24 @@
+{
+  "contact": {
+    "id": "CP-CONT-01",
+    "name": "Cuenta de Prueba",
+    "email": "prueba.qa@example.com",
+    "subject": "Consulta de prueba",
+    "message": "Mensaje enviado desde una prueba automatizada.",
+    "file": { "name": "adjunto.txt", "content": "archivo de prueba" }
+  },
+  "subscription": { "id": "CP-SUSC-01", "email": "prueba.qa@example.com" },
+  "detail": {
+    "id": "CP-DET-01",
+    "product": "Blue Top",
+    "price": "Rs. 500",
+    "category": "Women > Tops",
+    "brand": "Polo"
+  },
+  "review": {
+    "id": "CP-DET-02",
+    "name": "Cuenta de Prueba",
+    "email": "prueba.qa@example.com",
+    "text": "Reseña escrita por una prueba automatizada."
+  }
+}

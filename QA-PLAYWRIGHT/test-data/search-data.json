@@ -1,0 +1,8 @@
+{
+  "found": [
+    { "id": "CP-BUS-01", "term": "Blue Top", "expected": "Blue Top" },
+    { "id": "CP-BUS-02", "term": "Tshirt", "expected": "Men Tshirt" },
+    { "id": "CP-BUS-03", "term": "Sleeveless", "expected": "Sleeveless Dress" }
+  ],
+  "notFound": { "id": "CP-BUS-04", "term": "xyz123" }
+}

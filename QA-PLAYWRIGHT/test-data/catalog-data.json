@@ -1,0 +1,12 @@
+{
+  "categories": [
+    { "id": "CP-CAT-01", "group": "Women", "sub": "Dress" },
+    { "id": "CP-CAT-02", "group": "Men", "sub": "Tshirts" },
+    { "id": "CP-CAT-03", "group": "Kids", "sub": "Tops & Shirts" }
+  ],
+  "brands": [
+    { "id": "CP-MAR-01", "name": "Polo" },
+    { "id": "CP-MAR-02", "name": "H&M" },
+    { "id": "CP-MAR-03", "name": "Biba" }
+  ]
+}

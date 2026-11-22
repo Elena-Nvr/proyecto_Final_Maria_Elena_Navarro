@@ -1,0 +1,14 @@
+{
+  "name": "Usuario QA Prueba",
+  "password": "Clave-QA-2026!",
+  "birth": { "day": "15", "month": "May", "year": "1995" },
+  "firstName": "Usuario",
+  "lastName": "Prueba",
+  "company": "QA Test",
+  "address": "Av. Prueba 123",
+  "country": "Canada",
+  "state": "Estado de prueba",
+  "city": "Ciudad de prueba",
+  "zipcode": "12345",
+  "mobile": "999999999"
+}

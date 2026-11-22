@@ -6,6 +6,11 @@ import { CartPage } from '../pages/CartPage.js';
 import { CheckoutPage } from '../pages/CheckoutPage.js';
 import { PaymentPage } from '../pages/PaymentPage.js';
 import checkoutData from '../test-data/checkout-data.json';
+import { SignupPage } from '../pages/SignupPage.js';
+import { ProductListPage } from '../pages/ProductListPage.js';
+import { ProductDetailPage } from '../pages/ProductDetailPage.js';
+import { ContactPage } from '../pages/ContactPage.js';
+import { SubscriptionPage } from '../pages/SubscriptionPage.js';
 
 
 
@@ -31,9 +36,10 @@ export const test = base.extend({
   orderProduct: [checkoutData.product, { option: true }],
 
 
-  loginPage: async ({ page }, use) => {
+ loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
+    await expect(loginPage.email, 'La pagina de login no cargo').toBeVisible();
     await use(loginPage);
   },
 
@@ -65,6 +71,28 @@ export const test = base.extend({
   },
   paymentPage: async ({ page }, use) => {
     await use(new PaymentPage(page));
+  },
+
+    signupPage: async ({ page }, use) => {
+    await use(new SignupPage(page));
+  },
+
+    productListPage: async ({ page }, use) => {
+    const productListPage = new ProductListPage(page);
+    await productListPage.goto();
+    await use(productListPage);
+  },
+
+    productDetailPage: async ({ page }, use) => {
+    await use(new ProductDetailPage(page));
+  },
+    contactPage: async ({ page }, use) => {
+    const contactPage = new ContactPage(page);
+    await contactPage.goto();
+    await use(contactPage);
+  },
+    subscriptionPage: async ({ page }, use) => {
+    await use(new SubscriptionPage(page));
   },
 
   //el camino hasta Address Details: login, producto, carrito y checkout
