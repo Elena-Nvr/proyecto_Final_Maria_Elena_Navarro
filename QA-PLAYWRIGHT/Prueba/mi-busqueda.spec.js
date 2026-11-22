@@ -20,7 +20,7 @@ test('búsqueda sin resultados', async ({ page }) => {
 //await page.waitForTimeout(3000);
 //expect(await page.getByRole('heading', { name: 'Searched Products' }).isVisible()).toBe(true);
 
-//  espera explícita (la correcta)
+//  espera explícita (la correcta)np
 await expect(page.getByRole('heading', { name: 'Searched Products' })).toBeVisible();
 });
 

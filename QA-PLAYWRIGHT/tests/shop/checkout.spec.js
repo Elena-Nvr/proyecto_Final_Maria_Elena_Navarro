@@ -2,17 +2,24 @@ import { test, expect } from '../fixtures.js';
 import checkoutData from '../../test-data/checkout-data.json';
 
 // la cuenta de prueba y su carrito son compartidos: estos tests no pueden correr en paralelo
-test.describe.configure({ mode: 'serial' });
+test.describe.configure({ mode: 'serial', retries: 0 });  
 
 test.describe('Checkout', () => {
-  test('CP-CHECKOUT-01: completar el pedido con tarjeta', async ({
-    checkoutAtAddress: checkoutPage,
-    paymentPage,
-  }) => {
-    await checkoutPage.placeOrder(checkoutData.comment);
-    await paymentPage.payWithCard(checkoutData.card);
-    await expect(paymentPage.orderConfirmation).toBeVisible();
+ // CP-01 es data-driven: el mismo flujo corre una vez por cada pedido del JSON
+for (const order of checkoutData.orders) {
+  test.describe(`Pedido de ${order.label}`, () => {
+    test.use({ orderProduct: order.product });
+
+    test(`CP-CHECKOUT-01: completar el pedido con tarjeta (${order.label})`, async ({
+      checkoutAtAddress: checkoutPage,
+      paymentPage,
+    }) => {
+      await checkoutPage.placeOrder(order.comment);
+      await paymentPage.payWithCard(checkoutData.card);
+      await expect(paymentPage.orderConfirmation).toBeVisible();
+    });
   });
+}
 
   test('CP-CHECKOUT-02: el resumen muestra la dirección y el producto', async ({
     checkoutAtAddress: checkoutPage,

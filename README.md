@@ -13,38 +13,41 @@ Proyecto final del bootcamp - Tecsup
 ```text
 📦 proyecto_Final_Maria_Elena_Navarro/
 │
-├── 📂 docs/
-│   └── 📄 Documentación del proyecto
-│
-├── 📂 Evidencia/
-│   └── 🖼️ Capturas de pantalla y evidencias
-│
-├── 📂 test/
-│   └── 📝 Casos y documentación de pruebas manuales
+├── 📂 docs/                  # Documentación del proyecto
+├── 📂 Evidencia/             # Capturas de pantalla y evidencias
 │
 ├── 📂 QA-PLAYWRIGHT/
-│   │
-│   ├── 📂 pages/
+│   ├── 📂 pages/            
 │   │   ├── 📄 CartPage.js
+│   │   ├── 📄 CheckoutPage.js
+│   │   ├── 📄 ContactPage.js
 │   │   ├── 📄 HomePage.js
 │   │   ├── 📄 LoginPage.js
-│   │   └── 📄 ProductPage.js
+│   │   ├── 📄 PaymentPage.js
+│   │   ├── 📄 ProductDetailPage.js
+│   │   ├── 📄 ProductListPage.js
+│   │   ├── 📄 ProductPage.js
+│   │   ├── 📄 SignupPage.js
+│   │   └── 📄 SubscriptionPage.js
 │   │
 │   ├── 📂 tests/
 │   │   ├── 📂 auth/
-│   │   │   └── 🧪 login.spec.js
-│   │   │
+│   │   │   ├── 🧪 login.spec.js
+│   │   │   └── 🧪 signup.spec.js
 │   │   ├── 📂 shop/
-│   │   │   └── 🧪 cart.spec.js
-│   │   │
+│   │   │   ├── 🧪 cart.spec.js
+│   │   │   ├── 🧪 catalog.spec.js
+│   │   │   ├── 🧪 checkout.spec.js
+│   │   │   ├── 🧪 contact.spec.js
+│   │   │   ├── 🧪 product-detail.spec.js
+│   │   │   ├── 🧪 search.spec.js
+│   │   │   └── 🧪 subscription.spec.js
 │   │   └── 🧩 fixtures.js
 │   │
-│   ├── 📂 playwright-report/
-│   ├── 📂 prueba/
-│   ├── 📂 test-results/
-│   │
-│   ├── 🔒 .env.example
+│   ├── 📂 test-data/         # Datos de prueba en JSON
+│   ├── 🔒 .env.example      
 │   ├── 🚫 .gitignore
+│   ├── ⚙️ playwright.config.js
 │   ├── 📦 package.json
 │   └── 📦 package-lock.json
 │
@@ -82,6 +85,37 @@ Este repositorio reúne el trabajo de QA sobre una tienda virtual en dos frentes
 | **Page Object Model y fixtures** | Concentran localizadores y acciones de cada página; un cambio en la página se corrige en un solo lugar |
 | **Configuración por entorno** | `baseURL` en la configuración y credenciales en `.env` con `dotenv` |
 | **Git** | Una rama por cambio, commits con prefijo (`feat`, `fix`, `refactor`, `docs`, `test`) y Pull Request con descripción de qué cambia, cómo se probó y qué casos cubre |
+
+
+
+## ▶️ Cómo ejecutar la automatización
+
+**Requisitos:** Node.js 18 o superior y Git.
+
+```bash
+cd QA-PLAYWRIGHT
+npm install
+npx playwright install
+```
+
+**Ejecución:**
+
+```bash
+npx playwright test                       # todas las pruebas
+npx playwright test --project=chromium    # solo chromium (más estable)
+npx playwright test -g "CP-MAR-01"        # un caso
+npx playwright show-report                # ver el reporte HTML
+```
+
+
+**Ejecución:**
+
+```bash
+npx playwright test                       # todas las pruebas
+npx playwright test --project=chromium    # solo chromium (más estable)
+npx playwright test -g "CP-MAR-01"        # un caso
+npx playwright show-report                # ver el reporte HTML
+```
 
 ## 🛠️ Tecnologías utilizadas
 * 💻 JavaScript
