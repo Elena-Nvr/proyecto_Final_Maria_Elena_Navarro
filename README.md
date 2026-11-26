@@ -64,7 +64,7 @@ Este repositorio reúne el trabajo de QA sobre una tienda virtual en dos frentes
 
 ## 📚 Pruebas manuales
  
-| Tema | Qué se hizo |
+| Temas | Qué se hizo |
 |---|---|
 | **Casos de prueba** | Diseño con ID, precondiciones, pasos, resultado esperado y resultado obtenido |
 | **Tablas de decisión** | Combinación de condiciones y reglas de negocio para cubrir todos los escenarios posibles |
@@ -76,7 +76,7 @@ Este repositorio reúne el trabajo de QA sobre una tienda virtual en dos frentes
 
 ## 📘 Automatización en Playwright 
  
-| Tema | Qué aprendí |
+| Temas | Qué aprendí |
 |---|---|
 | **Localizadores** | Priorizar los más estables (`getByRole`, `getByLabel`, `getByPlaceholder`, `getByText`) y respetar el modo estricto, que falla si un localizador coincide con más de un elemento |
 | **Esperas** | Distinguir la implícita (`fill` y `click` esperan solos), la explícita (`await expect(...)`) y la fija (`waitForTimeout`), que se evita por volver los tests lentos e inestables |
