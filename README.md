@@ -107,16 +107,6 @@ npx playwright test -g "CP-MAR-01"        # un caso
 npx playwright show-report                # ver el reporte HTML
 ```
 
-
-**Ejecución:**
-
-```bash
-npx playwright test                       # todas las pruebas
-npx playwright test --project=chromium    # solo chromium (más estable)
-npx playwright test -g "CP-MAR-01"        # un caso
-npx playwright show-report                # ver el reporte HTML
-```
-
 ## 🛠️ Tecnologías utilizadas
 * 💻 JavaScript
 * 🟢 Node.js
